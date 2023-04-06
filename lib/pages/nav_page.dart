@@ -22,16 +22,10 @@ class MyNavigationPage extends StatelessWidget {
                     extended: constraints.maxWidth >= 600,
                     selectedIndex: appState.indexPage,
                     destinations: const [
-                      NavigationRailDestination(
-                          icon: Icon(Icons.home), label: Text('Home')
-                      ),
-                      NavigationRailDestination(
-                          icon: Icon(Icons.favorite), label: Text('Favorites')
-                      )
+                      NavigationRailDestination(icon: Icon(Icons.home), label: Text('Home')),
+                      NavigationRailDestination(icon: Icon(Icons.favorite), label: Text('Favorites'))
                     ],
-                    onDestinationSelected: (index) {
-                      appState.setPageIndex(index);
-                    },
+                    onDestinationSelected: (index) => appState.setPageIndex(index),
                   ),
                 ),
                 Expanded(
