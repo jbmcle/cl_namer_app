@@ -12,7 +12,7 @@ class GeneratorPage extends StatelessWidget {
     var appState = context.watch<MyAppState>();
     var wordPair = appState.currentWordPair;
 
-    var icon = appState.favs.contains(wordPair)
+    var icon = appState.favs.contains(wordPair.toString())
         ? Icons.favorite
         : Icons.favorite_outline;
 

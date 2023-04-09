@@ -11,6 +11,7 @@ class MyNavigationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
+    appState.initHiveHelper();
 
     return LayoutBuilder(
         builder: (context, constraints) {
@@ -47,7 +48,6 @@ class MyNavigationPage extends StatelessWidget {
         return const GeneratorPage();
       case 1:
         return const FavoritesPage();
-        break;
       default:
         throw UnimplementedError('No page found for index $index');
     }

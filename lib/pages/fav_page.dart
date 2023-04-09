@@ -11,7 +11,9 @@ class FavoritesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
 
-    return appState.favs.isEmpty ?
+    var list = appState.getPersistedFavs().isEmpty ? appState.favs : appState.getPersistedFavs();
+
+    return list.isEmpty ?
         const Center(child: Text('Favorites will show here'))
         :
         ListView(
@@ -19,13 +21,13 @@ class FavoritesPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
-                'You have ${appState.favs.length} favorite(s)'
+                'You have ${list.length} favorite(s)'
               ),
             ),
-            for (var pair in appState.favs)
+            for (var pair in list)
               ListTile(
                 leading: const Icon(Icons.favorite),
-                title: Text(pair.asLowerCase),
+                title: Text(pair),
               )
           ],
         );

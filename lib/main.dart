@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
             useMaterial3: true,
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange)),
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange)
+        ),
         home: const MyNavigationPage(),
       ),
     );
